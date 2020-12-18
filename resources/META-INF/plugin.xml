@@ -1,0 +1,43 @@
+<idea-plugin>
+    <id>com.your.company.unique.plugin.id</id>
+    <name>NC-UAP 开发插件</name>
+    <version>1.0</version>
+    <vendor email="zhangpeng2@yonyou.com" url="http://www.yonyou.com">YonyouNC</vendor>
+
+    <description><![CDATA[
+      用友NC-UAP开发插件 支持IDEA开发NC项目。本插件由曾经在用友奋斗的同学开发。
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="NC_DEV" text="NC 开发插件配置" popup="true" description="NC插件">
+            <add-to-group group-id="WindowMenu" anchor="first"/>
+        </group>
+        <!-- Add your actions here -->
+        <action id="ConfigNC_HOME" class="com.yonyou.base.action.ConfigNcHomeAction" text="配置NCHOME路径"
+                description="配置NCHOME路径">
+            <add-to-group group-id="NC_DEV" anchor="first"/>
+        </action>
+        <!-- Add your actions here -->
+        <action id="ConfigNC_Run" class="com.yonyou.base.action.GenerateRunConfigurationsAction" text="生成NC启动配置"
+                description="生成NC启动配置">
+            <add-to-group group-id="NC_DEV" anchor="first"/>
+        </action>
+        <!-- Add your actions here -->
+        <action id="ConfigNC_Src" class="com.yonyou.base.action.GenerateSrcPackageAction" text="生成NC项目源码包"
+                description="生成NC项目源码包">
+            <add-to-group group-id="NC_DEV" anchor="first"/>
+        </action>
+    </actions>
+
+</idea-plugin>
